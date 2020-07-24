@@ -330,7 +330,7 @@ class SystemResourceUsageMonitorESEDBPlugin(interface.ESEDBPlugin):
           # in the SruDbIdMapTable table; also referred to as identifier
           # mapping. Here we look up the numeric identifier stored in the GUID
           # table in SruDbIdMapTable.
-          record_value = identifier_mappings.get(record_value, record_value)
+          record_value = str(identifier_mappings.get(record_value, record_value))
 
         setattr(event_data, attribute_name, record_value)
 
